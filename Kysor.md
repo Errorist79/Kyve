@@ -4,7 +4,7 @@
 * [2. Build Guide](#2-build-guide)
     * [2.1 Requirements](#21-requirements)
     * [2.2 Installation](#22-installation)
-
+* [2. Final](#3-final-touches)
 
 ## 1. Overview
 
@@ -163,7 +163,7 @@ We have a few alternatives to upload the file. Let's see;
 </details>
 
 
-### Final Touches
+### 3. Final Touches
 
 This command should be run again every time the config file is edited, let's do it:
 
