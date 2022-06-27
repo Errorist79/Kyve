@@ -4,7 +4,10 @@
 * [2. Build Guide](#2-build-guide)
     * [2.1 Requirements](#21-requirements)
     * [2.2 Installation](#22-installation)
-* [2. Final](#3-final-touches)
+* [3. Final](#3-final-touches)
+    * [3.1 Additional Commands](#31-additional-commands)
+
+
 
 ## 1. Overview
 
@@ -205,7 +208,7 @@ sudo systemctl start kysord
 ```
 
 
-### Additional Commands
+#### 3.1 Additional Commands
 
 Check Logs
 
