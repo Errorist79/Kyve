@@ -108,7 +108,7 @@ echo export ID=$ID >> $HOME/.profile
 ##### 4. Disk Space
 
 Replace `PUT_SPACE_HERE` with the amount of bytes the node can use at max to cache data
-
+P.S!: **1000000000 equals 1 GB**
 ```
 SPACE="PUT_SPACE_HERE"
 echo export SPACE=$SPACE >> $HOME/.profile
@@ -116,7 +116,7 @@ echo export SPACE=$SPACE >> $HOME/.profile
 
 Now, run this command:
 ```
-sed -i -e "s/poolId: 0/poolId: $ID/g; s/initialStake: 100/initialStake: $amount/g; s/space: 1000000000/space: $SPACE/g" $HOME/kysor/kysor.conf.ts
+sed -i -e "s/poolId: 0/poolId: $ID/g; s/initialStake: 100/initialStake: $AMOUNT/g; s/space: 1000000000/space: $SPACE/g" $HOME/kysor/kysor.conf.ts
 ```
 
 ##### 5. Arweave Key File
@@ -227,3 +227,7 @@ Restart Kysor
 ```
 systemctl restart kysord
 ```
+
+If everything goes right; Bingo!
+
+![image](https://user-images.githubusercontent.com/71728280/176054193-2462f14f-4de3-49e7-aae6-a87db677bbf9.png)
