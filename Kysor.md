@@ -70,7 +70,7 @@ You need to add this to the secrets directory.
 - Initial Stake
 > the amount of $KYVE you want to stake
 - Pool Id
-> the ID of the pool you want to join as a validator, an overview of all pools [can be found here.](https://app.kyve.network)
+> the ID of the pool you want to join as a validator, an overview of all pools [can be found here.](https://app.kyve.network/#/pools)
 - Disk Space
 > the amount of bytes the node can use at max to cache data, **1000000000 equals 1 GB** which is usually enough
 - Arweave Key File
