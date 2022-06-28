@@ -35,7 +35,7 @@ The following are **minimum** requirements to run a protocol node:
 
 Start by installing Yarn
 
-```
+```bash
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt install wget unzip curl git -y
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -46,7 +46,7 @@ sudo apt install yarn
 
 Next, cloning the Kysor Github repositor and move into the Kysor directory:
 
-```
+```bash
 cd $HOME
 git clone https://github.com/kyve-org/kysor.git
 cd kysor
@@ -54,13 +54,13 @@ cd kysor
 
 Now, run this command:
 
-```
+```bash
 yarn install
 ```
 
 Create secrets folder
 > This directory where your secrets are stored like arweave.json and mnemonic.txt
-```
+```bash
 mkdir secrets
 ```
 There are some other requirements required for Kysor to work.
@@ -85,14 +85,14 @@ You can set the above requirements as follows:
 
 Replace `PUT_YOUR_MNEMONIC_HERE` with the mnemonics of the wallet where your've tokens.
 
-```
+```bash
 MNEMONIC="PUT_YOUR_MNEMONİC_HERE"
 echo "$MNEMONIC" >> $HOME/kysor/secrets/mnemonic.txt
 ```
 
 ##### 2. Initial Stake
 Replace `PUT_THE_AMOUNT_OF_$KYVE_YOU_WANT_TO_STAKE_HERE` with the mnemonics of the wallet where your've tokens.
-```
+```bash
 AMOUNT="PUT_THE_AMOUNT_OF_$KYVE_YOU_WANT_TO_STAKE_HERE"
 echo export AMOUNT=$AMOUNT >> $HOME/.profile
 ```
@@ -100,7 +100,7 @@ echo export AMOUNT=$AMOUNT >> $HOME/.profile
 ##### 3. Pool Id
 
 Replace `PUT_ID_HERE` with the ID of the pool you want to join as a validator.
-```
+```bash
 ID="PUT_ID_HERE"
 echo export ID=$ID >> $HOME/.profile
 ```
@@ -109,13 +109,13 @@ echo export ID=$ID >> $HOME/.profile
 
 Replace `PUT_SPACE_HERE` with the amount of bytes the node can use at max to cache data
 P.S!: **1000000000 equals 1 GB**
-```
+```bash
 SPACE="PUT_SPACE_HERE"
 echo export SPACE=$SPACE >> $HOME/.profile
 ```
 
 Now, run this command:
-```
+```bash
 sed -i -e "s/poolId: 0/poolId: $ID/g; s/initialStake: 100/initialStake: $AMOUNT/g; s/space: 1000000000/space: $SPACE/g" $HOME/kysor/kysor.conf.ts
 ```
 
@@ -159,7 +159,7 @@ We have a few alternatives to upload the file. Let's see;
   scp path/to/arwave/file username@ip:/path/to/kysor/secrets
   ```
    Example:
-  ```
+  ```bash
   scp C:\Users\Errorist\Desktop\arweave.json root@135.181.157.37:/root/kysor/secrets
   ```
   
@@ -170,7 +170,7 @@ We have a few alternatives to upload the file. Let's see;
 
 This command should be run again every time the config file is edited, let's do it:
 
-```
+```bash
 yarn build
 ```
 
@@ -178,7 +178,7 @@ With the `yarn start` command you are ready to start node! But, wait.
 
 There is a better way. will create a daemon. It runs these processes in the background and provides a better usability.
 
-```
+```bash
 sudo tee /etc/systemd/system/kysord.service > /dev/null <<EOF  
 [Unit]
 Description=Kysor Daemon
@@ -199,7 +199,7 @@ EOF
 
 Start service
                                                               
-```                                                            
+```bash
 sed -i 's/#Storage=auto/Storage=persistent/g' /etc/systemd/journald.conf
 sudo systemctl restart systemd-journald
 sudo systemctl daemon-reload
@@ -212,19 +212,19 @@ sudo systemctl start kysord
 
 Check Logs
 
-```
+```bash
 journalctl -u kysord -fo cat
 ```
 
 Stop the Kysor
 
-```
+```bash
 systemctl stop kysord
 ```
 
 Restart Kysor
 
-```
+```bash
 systemctl restart kysord
 ```
 
