@@ -114,8 +114,9 @@ SPACE="PUT_SPACE_HERE"
 echo export SPACE=$SPACE >> $HOME/.profile
 ```
 
-Now, run this command:
+Now, run this commands:
 ```bash
+source $HOME/.profile
 sed -i -e "s/poolId: 0/poolId: $ID/g; s/initialStake: 100/initialStake: $AMOUNT/g; s/space: 1000000000/space: $SPACE/g" $HOME/kysor/kysor.conf.ts
 ```
 
