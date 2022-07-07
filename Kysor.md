@@ -91,7 +91,7 @@ echo "$MNEMONIC" >> $HOME/kysor/secrets/mnemonic.txt
 ```
 
 ##### 2. Initial Stake
-Replace `PUT_THE_AMOUNT_OF_$KYVE_YOU_WANT_TO_STAKE_HERE` with the mnemonics of the wallet where your've tokens.
+Replace `PUT_THE_AMOUNT_OF_$KYVE_YOU_WANT_TO_STAKE_HERE` with the amount you want to stake.
 ```bash
 AMOUNT="PUT_THE_AMOUNT_OF_$KYVE_YOU_WANT_TO_STAKE_HERE"
 echo export AMOUNT=$AMOUNT >> $HOME/.profile
