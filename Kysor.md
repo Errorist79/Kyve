@@ -29,7 +29,7 @@ Without KYSOR for every pool the node runner has to get the binaries manually. I
 The following are **minimum** requirements to run a protocol node:
  - **CPU**: 1vCPU
  - **RAM**: 4GB RAM
- - **Storage**: 1vCPU
+ - **Storage**: 5GB
 
 ### 2.2 Installation
 
